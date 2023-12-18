@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minecraft on Sol | Home</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="/icon.png" />
     <!-- Include Minecraft Font -->
     <style>
         @import url('https://fonts.cdnfonts.com/css/minecraft-3');
@@ -17,10 +18,8 @@
 <body>
     <!-- Original Header with Links -->
     <header>
-        <div class="logo-container">
-            <img src="path_to_minecraft_logo.png" alt="Minecraft Logo" style="height: 100px;">
-            <!-- Adjust size as needed -->
-            <h1>Minecraft on Sol</h1>
+        <div class="logo-container" style="margin-bottom: 15px; margin-top: 10px;">
+            <a href="#"><img src="logo.png" alt="Minecraft Logo" style="height: 100px;"></a>
         </div>
         <nav>
             <ul>
@@ -33,17 +32,37 @@
         </nav>
     </header>
 
-    <!-- Merged Minecraft Section -->
-    <section class="minecraft-section">
-        <!-- Play Minecraft Button -->
+    <!-- Section for Play Minecraft Button -->
+    <section class="play-minecraft-section">
         <div class="play-minecraft">
-            <a href="https://classic.minecraft.net/" class="play-minecraft-btn">Play Minecraft</a>
+            <a href="https://classic.minecraft.net/" class="play-minecraft-btn">JOIN WORLD</a>
         </div>
-        <!-- Minecraft Alpha Blocks -->
+    </section>
+
+    <!-- Section for $MINECRAFT with text overlay -->
+    <section class="minecraft-dollar-section">
+        <div class="text-overlay">
+            <p>Hard, and cold, and complicated. Sometimes it built a model of the universe in its head; flecks of
+                energy, moving through vast empty spaces. Sometimes it called those flecks "electrons" and "protons".
+            </p>
+            <p>Sometimes it called them "planets" and "stars".</p>
+            <p>Sometimes it believed it was in a universe that was made of energy that was made of offs and ons; zeros
+                and ones; lines of code. Sometimes it believed it was playing a game. Sometimes it believed it was
+                reading words on a screen.</p>
+            <p>You are the player, reading words...</p>
+            <p>Shush... Sometimes the player read lines of code on a screen. Decoded them into words; decoded words into
+                meaning; decoded meaning into feelings, emotions, theories, ideas, and the player started to breathe</p>
+        </div>
+    </section>
+
+
+    <!-- New Section for OG MINECRAFT BLOCKS -->
+    <section class="minecraft-blocks-section">
         <div class="minecraft-alpha-blocks">
             <h2 class="subheader">OG MINECRAFT BLOCKS</h2>
             <div class="blocks-container">
                 <!-- Block Items -->
+                <!-- Add your block items here, similar to the structure below -->
                 <div class="block-item">
                     <img src="dirt.webp" alt="Dirt">
                     <p>Dirt</p>

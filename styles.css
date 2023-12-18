@@ -83,12 +83,10 @@ nav ul li a:hover {
     z-index: 2;
 }
 
-.play-minecraft {
-    margin-bottom: 30px; /* Space between the button and block section */
-}
 
+/* Base style for the Play Minecraft button */
 .play-minecraft-btn {
-    background-color: #4CAF50; /* Green background for the button */
+    background-color: #4CAF50; /* Initial green background for the button */
     border: none;
     color: white;
     padding: 20px 40px;
@@ -96,6 +94,150 @@ nav ul li a:hover {
     text-decoration: none;
     display: inline-block;
     cursor: pointer;
+    transition: transform 0.3s ease; /* Smooth transition for transform effects */
+    border-radius: 4px; /* Rounded corners for the button */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+    position: relative; /* Required for absolute positioning of pseudo-elements */
+    overflow: hidden; /* Ensures that pseudo-elements don't overflow the button's boundaries */
+}
+
+/* Pseudo-element for the gradient background */
+.play-minecraft-btn::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%; /* Large enough to cover the entire button when rotated */
+    height: 200%; /* Large enough to cover the entire button when rotated */
+    background-image: linear-gradient(45deg, #4caf50, #8bc34a, #cddc39, #ffeb3b, #cddc39, #8bc34a, #4caf50);
+    background-size: 50% 50%; /* Start with smaller size to allow for scaling */
+    z-index: -1; /* Put it behind the button's text */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    border-radius: 4px; /* Match the button border radius */
+}
+
+/* Style for the $MINECRAFT section with text overlay */
+.minecraft-dollar-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    color: white; /* Initial text color */
+    text-align: center; /* Center the text */
+    background-position: center;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    background-blend-mode: overlay; /* Blends the overlay with the background image */
+    background-image: url('bg.jpg'); /* Background image */
+    background-size: cover;
+    background-position: center;
+}
+
+.text-overlay p {
+    font-size: 1.5em; /* Size of the placeholder text */
+    background: -webkit-linear-gradient(#ffe259, #ffa751);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 3em 3em;
+}
+
+/* Grass texture overlay */
+.minecraft-dollar-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('grass_texture.png') repeat;
+    opacity: 0.5; /* Adjust the opacity to make the text readable */
+    pointer-events: none; /* Allows clicks to pass through */
+}
+
+
+/* Hover effect for the Play Minecraft button */
+.play-minecraft-btn:hover::before {
+    top: 0;
+    left: 0;
+    width: 100%; /* Reset to the original size */
+    height: 100%; /* Reset to the original size */
+    border-radius: 4px; /* Match the button border radius */
+    animation: rotateGradient 3s linear infinite; /* Apply the animation */
+}
+
+/* Animation for the gradient background rotation */
+@keyframes rotateGradient {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Hover effect to scale the button text slightly */
+.play-minecraft-btn:hover {
+    transform: scale(1.05); /* Slightly increase the size */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3); /* Increase the shadow size */
+    color: #000; /* Change text color to contrast with the bright background */
+}
+
+
+.play-minecraft-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background-image: url('bg.jpg'); /* Background image with grass texture */
+    background-repeat: no-repeat; /* No repeat for the image */
+    background-position: center center; /* Center the image */
+    background-size: cover; /* Cover the entire section, preserving aspect ratio */
+    position: relative; /* Set position context for pseudo-element */
+    z-index: 0;
+}
+
+/* After pseudo-element for dark overlay */
+.play-minecraft-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay for contrast */
+    z-index: -1; /* Ensure it's behind the content */
+}
+
+
+.play-minecraft {
+    text-align: center;
+}
+
+/* Style for the Minecraft Blocks section */
+.minecraft-blocks-section {
+    padding: 50px 0;
+    background: rgba(0, 0, 0, 0.459); /* Dark overlay */
+    background-blend-mode: overlay; /* Blends the overlay with the background image */
+    background-image: url('bg2.jpg'); /* Background image */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Center the Play Minecraft button */
+.play-minecraft {
+    text-align: center; /* Aligns the button to the center */
+    margin-bottom: 30px; /* Space between the button and block section */
+}
+
+/* Center the OG MINECRAFT BLOCKS title and blocks */
+.minecraft-alpha-blocks {
+    text-align: center; /* Aligns content inside to the center */
+}
+
+/* This will ensure that the text within block-item is also centered, if it's not already */
+.block-item {
+    text-align: center;
 }
 
 .subheader {
